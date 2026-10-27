@@ -1,0 +1,2308 @@
+/* ==========================================================
+   JOY UNIVERSITY - STUDENT ID CARD MANAGEMENT SYSTEM
+   Light Lavender, Lilac, White & Champagne Gold Design System
+   ========================================================== */
+
+:root {
+    --primary: #7c52b8;
+    --primary-dark: #5b3496;
+    --primary-light: #9d7bd8;
+    --primary-soft: #f4ecfb;
+    --accent-gold: #f59e0b;
+    --accent-gold-light: #fbbf24;
+    --accent-gold-dark: #d97706;
+    --bg-page: #f6f1fc;
+    --surface: #ffffff;
+    --surface-border: #e6daf5;
+    --surface-subtle: #fbf9fd;
+    --text-plum: #2e1065;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --text-lavender: #7c52b8;
+    --border: #e6daf5;
+    --border-light: #f0e6fa;
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+    --success: #15803d;
+    --shadow-sm: 0 2px 8px rgba(124, 82, 184, 0.06);
+    --shadow-md: 0 8px 24px rgba(124, 82, 184, 0.08);
+    --shadow-lg: 0 16px 40px rgba(124, 82, 184, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 10% 12%, rgba(220, 205, 245, 0.45) 0%, transparent 45%),
+                radial-gradient(circle at 90% 85%, rgba(235, 222, 250, 0.55) 0%, transparent 50%),
+                linear-gradient(135deg, #f7f2fc 0%, #ffffff 40%, #f4ecfb 75%, #eee5f7 100%);
+    background-attachment: fixed;
+    color: #374151;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ==========================================================
+   SUBTLE BACKGROUND DIGITAL ID-CARD & CIRCUIT PATTERNS
+   ========================================================== */
+.bg-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Soft Angled Translucent Capsule 1 */
+.decor-capsule-1 {
+    position: absolute;
+    width: 480px;
+    height: 96px;
+    border-radius: 48px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.12) 0%, rgba(235, 222, 250, 0.02) 100%);
+    transform: rotate(-45deg);
+    top: 8%;
+    right: 5%;
+}
+
+/* Soft Angled Capsule 2 */
+.decor-capsule-2 {
+    position: absolute;
+    width: 340px;
+    height: 76px;
+    border-radius: 38px;
+    background: linear-gradient(135deg, rgba(124, 82, 184, 0.1) 0%, transparent 100%);
+    transform: rotate(-45deg);
+    bottom: 5%;
+    right: 15%;
+}
+
+/* Vertical Accent Lines in Center Top */
+.decor-vert-line-1 {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 3px;
+    height: 160px;
+    background: linear-gradient(to bottom, rgba(168, 85, 247, 0.22) 0%, transparent 100%);
+    border-radius: 2px;
+}
+
+.decor-vert-line-2 {
+    position: absolute;
+    top: 0;
+    left: 48%;
+    width: 3px;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(168, 85, 247, 0.18) 0%, transparent 100%);
+    border-radius: 2px;
+}
+
+/* Smooth Wavy Line SVG Art */
+.decor-wavy-svg {
+    position: absolute;
+    top: 5%;
+    left: 18%;
+    width: 580px;
+    height: 380px;
+    opacity: 0.22;
+}
+
+/* Ambient Glow Blobs */
+.decor-glow-sphere-1 {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192, 132, 252, 0.18) 0%, transparent 70%);
+    top: 20%;
+    left: 5%;
+    filter: blur(55px);
+}
+
+.decor-glow-sphere-2 {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+    bottom: 10%;
+    right: 5%;
+    filter: blur(60px);
+}
+
+/* Floating Stylized Smart ID Card 1 (Top Left) */
+.bg-idcard-floating-1 {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    width: 220px;
+    height: 138px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(243, 232, 255, 0.6) 100%);
+    border: 1.5px solid rgba(175, 142, 230, 0.35);
+    transform: rotate(-14deg);
+    box-shadow: 0 12px 30px rgba(124, 82, 184, 0.08);
+    backdrop-filter: blur(8px);
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.6;
+    animation: cardFloatSlow 9s ease-in-out infinite alternate;
+}
+
+@keyframes cardFloatSlow {
+    0% { transform: rotate(-14deg) translateY(0); }
+    100% { transform: rotate(-12deg) translateY(-12px); }
+}
+
+/* Floating Stylized Smart ID Card 2 (Bottom Right) */
+.bg-idcard-floating-2 {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+    width: 240px;
+    height: 150px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(246, 240, 253, 0.65) 100%);
+    border: 1.5px solid rgba(192, 132, 252, 0.35);
+    transform: rotate(16deg);
+    box-shadow: 0 14px 32px rgba(124, 82, 184, 0.09);
+    backdrop-filter: blur(8px);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0.55;
+    animation: cardFloatReverse 9s ease-in-out infinite alternate;
+}
+
+@keyframes cardFloatReverse {
+    0% { transform: rotate(16deg) translateY(0); }
+    100% { transform: rotate(18deg) translateY(12px); }
+}
+
+/* Card Miniature Wireframe Elements */
+.wire-card-chip {
+    width: 28px;
+    height: 22px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border: 1px solid #fef3c7;
+    box-shadow: 0 0 6px rgba(245, 158, 11, 0.35);
+}
+
+.wire-card-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wire-card-line {
+    height: 3px;
+    background: rgba(124, 82, 184, 0.25);
+    border-radius: 2px;
+}
+
+.wire-card-barcode {
+    display: flex;
+    gap: 2px;
+    align-items: flex-end;
+    height: 14px;
+}
+
+.wire-card-barcode span {
+    background: rgba(124, 82, 184, 0.35);
+    width: 2px;
+    height: 100%;
+}
+
+/* RFID / NFC Signal Waves in Background */
+.bg-rfid-waves {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    opacity: 0.2;
+}
+
+/* Smart Card Circuit Lines SVG */
+.bg-circuits-svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 450px;
+    height: 300px;
+    opacity: 0.15;
+}
+
+/* ----------------------------------------------------------
+   NAVBAR & HEADER (Matches Reference Image)
+   ---------------------------------------------------------- */
+header.app-header {
+    background: linear-gradient(90deg, #7c52b8 0%, #8e65c9 50%, #764cb4 100%);
+    color: #ffffff;
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(118, 75, 180, 0.16);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    background: #5a3594;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.brand-text h1 {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    line-height: 1.15;
+}
+
+.brand-text span {
+    font-size: 10.5px;
+    color: #e9d5ff;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Header User Profile Capsule (Reference Image Right Side) */
+.header-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.14);
+    padding: 4px 14px 4px 8px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+.header-user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #7c52b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.header-user-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.header-user-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-user-id {
+    font-size: 11px;
+    color: #e9d5ff;
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.user-badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.user-badge .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Header Logout Button (Matching Reference Image) */
+.btn-logout {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* ----------------------------------------------------------
+   BUTTONS
+   ---------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 18px;
+    border-radius: 24px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Blue / Purple Primary Button (Matches Reference Image) */
+.btn-primary {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d62d1 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(26, 115, 232, 0.28);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 18px rgba(26, 115, 232, 0.38);
+    transform: translateY(-1.5px);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: #553488;
+    border: 1.5px solid #d8caee;
+    box-shadow: 0 2px 6px rgba(124, 82, 184, 0.05);
+}
+
+.btn-secondary:hover {
+    background: #fbf9fd;
+    border-color: #7c52b8;
+    color: #2e1065;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.btn-gold:hover {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+}
+
+.btn-purple {
+    background: linear-gradient(135deg, #7c52b8 0%, #693ca4 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(124, 82, 184, 0.25);
+}
+
+.btn-purple:hover {
+    background: linear-gradient(135deg, #8e65c9 0%, #7c52b8 100%);
+    box-shadow: 0 6px 18px rgba(124, 82, 184, 0.35);
+}
+
+.btn-navy {
+    background: linear-gradient(135deg, #0284c7 0%, #003b80 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 59, 128, 0.25);
+}
+
+.btn-navy:hover {
+    box-shadow: 0 6px 16px rgba(0, 59, 128, 0.35);
+}
+
+.btn-red {
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
+}
+
+.btn-red:hover {
+    box-shadow: 0 6px 16px rgba(185, 28, 28, 0.35);
+}
+
+.btn-outline-white {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ----------------------------------------------------------
+   DASHBOARD LAYOUT WITH SIDEBAR (Matching Reference Image)
+   ---------------------------------------------------------- */
+.app-layout-wrapper {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 62px);
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Sidebar */
+.app-sidebar {
+    width: 220px;
+    background: rgba(244, 238, 251, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid #e5daf5;
+    padding: 24px 14px 20px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.sidebar-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 16px;
+    border-radius: 12px;
+    color: #553488;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav-item .nav-icon {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+.sidebar-nav-item:hover {
+    background: rgba(255, 255, 255, 0.65);
+    color: #2e1065;
+}
+
+.sidebar-nav-item.active {
+    background: #ffffff;
+    color: #2e1065;
+    box-shadow: 0 4px 14px rgba(124, 82, 184, 0.1);
+    font-weight: 700;
+}
+
+.sidebar-footer-brand {
+    padding: 16px 8px 6px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #7c52b8;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.sidebar-shield-icon {
+    width: 36px;
+    height: 40px;
+    color: #9d7bd8;
+    opacity: 0.8;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 28px 40px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* White Clean Cards with Soft Lavender Borders */
+.card-panel {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome Banner (Matching Reference Image) */
+.banner-panel {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(246, 240, 253, 0.95) 55%, rgba(254, 250, 240, 0.9) 100%);
+    border: 1px solid #e5daf5;
+    border-radius: var(--radius-lg);
+    padding: 20px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 18px rgba(124, 82, 184, 0.05);
+    flex-wrap: wrap;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.banner-panel h2 {
+    color: var(--text-plum);
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.banner-panel p {
+    color: #6b7280;
+    font-size: 13.5px;
+    margin-top: 4px;
+}
+
+/* ----------------------------------------------------------
+   THEME PALETTES (University Red vs Dayscholar Navy Blue)
+   ---------------------------------------------------------- */
+.card-theme-red {
+    --theme-color: #b91c1c;
+    --theme-dark-color: #881337;
+    --theme-light-color: #ef4444;
+    --theme-bg-tint: #fef2f2;
+    --theme-border-tint: #fca5a5;
+    --theme-badge-bg: #fef2f2;
+    --theme-badge-text: #b91c1c;
+    --theme-badge-border: #fca5a5;
+    --theme-banner-bg: #b91c1c;
+    --theme-shadow: rgba(185, 28, 28, 0.35);
+}
+
+.card-theme-navy {
+    --theme-color: #003b80;
+    --theme-dark-color: #001f44;
+    --theme-light-color: #0066cc;
+    --theme-bg-tint: #eff6ff;
+    --theme-border-tint: #bfdbfe;
+    --theme-badge-bg: #eff6ff;
+    --theme-badge-text: #003b80;
+    --theme-badge-border: #93c5fd;
+    --theme-banner-bg: #003b80;
+    --theme-shadow: rgba(0, 59, 128, 0.38);
+}
+
+/* ----------------------------------------------------------
+   UNIVERSAL PHOTO CONSTRAINTS (PREVENT OVERFLOW ON UPLOAD)
+   ---------------------------------------------------------- */
+.student-photo-frame {
+    width: 130px !important;
+    height: 155px !important;
+    border-radius: 12px !important;
+    border: 2px solid var(--border) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: #f1f5f9;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-photo-frame img,
+#profilePhoto,
+#cardPhotoImg,
+.front-photo-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Dashboard Profile Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 12px;
+    column-gap: 16px;
+    font-size: 14px;
+}
+
+.info-grid .lbl {
+    font-weight: 700;
+    color: #4b5563;
+}
+
+.info-grid .val {
+    font-weight: 700;
+    color: #111827;
+}
+
+/* ----------------------------------------------------------
+   3D FLIPPABLE ID CARD SYSTEM (Portrait CR80 with Lanyard Holder)
+   ---------------------------------------------------------- */
+.card-viewer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 6px 0 24px 0;
+    width: 100%;
+}
+
+.card-display-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.card-perspective-box {
+    perspective: 1400px;
+    width: 340px;
+    height: 545px;
+    margin: 0 auto;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: transform 0.25s ease;
+}
+
+.card-perspective-box:hover {
+    transform: translateY(-3px);
+}
+
+.card-flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.75s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.card-flipper.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-flip-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-flip-face.face-back {
+    transform: rotateY(180deg);
+}
+
+/* Side-by-Side Mode */
+.card-display-wrapper.side-by-side-mode {
+    width: 100%;
+}
+
+.card-display-wrapper.side-by-side-mode .card-perspective-box {
+    width: 100% !important;
+    height: auto !important;
+    perspective: none !important;
+    cursor: default !important;
+    transform: none !important;
+}
+
+.card-display-wrapper.side-by-side-mode .card-flipper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 32px !important;
+    justify-content: center !important;
+    transform: none !important;
+}
+
+.card-display-wrapper.side-by-side-mode .card-flip-face {
+    position: relative !important;
+    width: 340px !important;
+    height: auto !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+}
+
+.flip-hint-badge {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ----------------------------------------------------------
+   REALISTIC LANYARD HOLDER BEZEL (Red vs Navy Blue)
+   ---------------------------------------------------------- */
+.card-holder-frame {
+    width: 340px;
+    border-radius: 26px;
+    padding: 10px 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Red Metallic Holder (For Hostellers / Others) */
+.card-theme-red .card-holder-frame {
+    background: linear-gradient(145deg, #d32f2f 0%, #b91c1c 45%, #881337 100%);
+    border: 2px solid #ef4444;
+    box-shadow: 0 18px 40px rgba(185, 28, 28, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.4);
+}
+
+/* Navy Blue Metallic Holder (ONLY FOR GONGITI AHALYA - DAYSCHOLAR) */
+.card-theme-navy .card-holder-frame {
+    background: linear-gradient(145deg, #0056b3 0%, #003b80 45%, #001f44 100%);
+    border: 2px solid #38bdf8;
+    box-shadow: 0 18px 40px rgba(0, 59, 128, 0.38), inset 0 2px 3px rgba(255, 255, 255, 0.45);
+}
+
+/* Metallic Lanyard Slot with Silver Clip Loop */
+.holder-lanyard-slot {
+    width: 52px;
+    height: 14px;
+    background: #0f172a;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.holder-lanyard-slot::before {
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 12px;
+    border-radius: 6px 6px 0 0;
+    border: 2.5px solid #cbd5e1;
+    border-bottom: none;
+    background: transparent;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
+}
+
+/* Inner White PVC Card Badge */
+.card-badge {
+    width: 100%;
+    height: 485px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ----------------------------------------------------------
+   FRONT CARD: EXACT MATCH TO PHYSICAL BADGE (media_1790251775943.jpg)
+   ---------------------------------------------------------- */
+.card-front {
+    background: #ffffff;
+}
+
+.card-theme-red .card-front-top-ribbon-1 {
+    background: #b91c1c;
+}
+.card-theme-navy .card-front-top-ribbon-1 {
+    background: #003b80;
+}
+.card-front-top-ribbon-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85px;
+    height: 52px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.card-theme-red .card-front-top-ribbon-2 {
+    background: #ef4444;
+}
+.card-theme-navy .card-front-top-ribbon-2 {
+    background: #0284c7;
+}
+.card-front-top-ribbon-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 38px;
+    clip-path: polygon(100% 0, 15% 0, 100% 100%);
+    opacity: 0.55;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.card-theme-red .card-front-mid-ribbon {
+    background: #b91c1c;
+}
+.card-theme-navy .card-front-mid-ribbon {
+    background: #003b80;
+}
+.card-front-mid-ribbon {
+    position: absolute;
+    top: 155px;
+    left: 0;
+    width: 44px;
+    height: 48px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.card-theme-red .card-front-bot-ribbon {
+    background: #b91c1c;
+}
+.card-theme-navy .card-front-bot-ribbon {
+    background: #003b80;
+}
+.card-front-bot-ribbon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+/* Official Joy University Logo */
+.ju-official-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 14px;
+    padding-bottom: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.ju-logo-emblem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.ju-logo-title {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18.5px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #1e293b;
+    text-transform: uppercase;
+}
+
+.ju-logo-underline {
+    width: 82%;
+    height: 1px;
+    background: #cbd5e1;
+    margin-top: 6px;
+    position: relative;
+}
+
+.ju-logo-underline::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -12px;
+    width: 25px;
+    height: 13px;
+    border-right: 1px solid #cbd5e1;
+    border-top: 1px solid #cbd5e1;
+    transform: skewX(-35deg);
+}
+
+.front-photo-container {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 6px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.front-photo-frame {
+    width: 122px;
+    height: 145px;
+    border-radius: 12px;
+    border: 1.5px solid #94a3b8;
+    overflow: hidden !important;
+    background: #f8fafc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.front-photo-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.front-details-block {
+    text-align: center;
+    padding: 0 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    position: relative;
+    z-index: 2;
+}
+
+.front-student-name {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.card-theme-red .front-student-name {
+    color: #881337;
+}
+
+.card-theme-navy .front-student-name {
+    color: #001f44;
+}
+
+.front-student-id {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+}
+
+.front-school-name {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 1px;
+}
+
+.front-signature-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.sig-registrar-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.sig-authority-text {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #334155;
+    text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------
+   BACK CARD: EXACT MATCH TO PHYSICAL BADGE (media_1790165440845.jpg)
+   ---------------------------------------------------------- */
+.card-back {
+    background: #ffffff;
+}
+
+.card-theme-red .back-top-ribbon-1 {
+    background: #b91c1c;
+}
+.card-theme-navy .back-top-ribbon-1 {
+    background: #003b80;
+}
+.back-top-ribbon-1 {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 140px;
+    height: 18px;
+    clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.back-hostel-banner {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 13px;
+    text-align: center;
+    padding: 6px 12px;
+    letter-spacing: 0.5px;
+    margin-top: 14px;
+    position: relative;
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.card-theme-red .back-hostel-banner {
+    background: #b91c1c;
+    box-shadow: 0 2px 4px rgba(185, 28, 28, 0.2);
+}
+
+.card-theme-navy .back-hostel-banner {
+    background: #003b80;
+    box-shadow: 0 2px 4px rgba(0, 59, 128, 0.25);
+}
+
+.back-details-section {
+    padding: 8px 18px 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.back-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    line-height: 1.35;
+}
+
+.back-info-table td {
+    padding: 2px 0;
+    vertical-align: top;
+}
+
+.back-info-table .lbl {
+    width: 86px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.back-info-table .sep {
+    width: 12px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.back-info-table .val {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.back-instructions-section {
+    padding: 2px 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.back-heading-theme {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.card-theme-red .back-heading-theme {
+    color: #b91c1c;
+}
+
+.card-theme-navy .back-heading-theme {
+    color: #003b80;
+}
+
+.back-instruction-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 9px;
+    color: #1e293b;
+    line-height: 1.35;
+}
+
+.back-instruction-bullets li {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 3px;
+    align-items: flex-start;
+}
+
+.bullet-dot {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.card-theme-red .bullet-dot {
+    color: #b91c1c;
+}
+
+.card-theme-navy .bullet-dot {
+    color: #003b80;
+}
+
+.back-contact-section {
+    padding: 4px 18px 6px;
+    position: relative;
+    z-index: 2;
+}
+
+.back-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.contact-theme-icon {
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.card-theme-red .contact-theme-icon {
+    color: #b91c1c;
+}
+
+.card-theme-navy .contact-theme-icon {
+    color: #003b80;
+}
+
+.back-barcode-container {
+    margin-top: auto;
+    padding: 6px 14px 10px;
+    background: #ffffff;
+    position: relative;
+    z-index: 2;
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+}
+
+.card-theme-red .back-bottom-ribbon {
+    background: #b91c1c;
+}
+
+.card-theme-navy .back-bottom-ribbon {
+    background: #003b80;
+}
+
+.back-bottom-ribbon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 22px;
+    clip-path: polygon(0 60%, 15% 0, 85% 0, 100% 60%, 100% 100%, 0 100%);
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.btn-red {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    color: #ffffff;
+}
+
+.btn-red:hover {
+    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+    box-shadow: 0 4px 10px rgba(185, 28, 28, 0.35);
+}
+
+.btn-navy {
+    background: linear-gradient(135deg, #003b80 0%, #00224d 100%);
+    color: #ffffff;
+}
+
+.btn-navy:hover {
+    background: linear-gradient(135deg, #004d99 0%, #003b80 100%);
+    box-shadow: 0 4px 10px rgba(0, 59, 128, 0.35);
+}
+
+/* ----------------------------------------------------------
+   INTERACTION CONTROLS
+   ---------------------------------------------------------- */
+.controls-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.flip-hint {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ----------------------------------------------------------
+   DASHBOARD STATS & GRIDS (Light Lavender / Lilac Theme)
+   ---------------------------------------------------------- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(124, 82, 184, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(124, 82, 184, 0.12);
+    border-color: #d8caee;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #f6f0fc;
+    color: #7c52b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border: 1px solid #e6daf5;
+    flex-shrink: 0;
+}
+
+.stat-info h4 {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    color: #6b7280;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.stat-info p {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2e1065;
+    margin-top: 2px;
+    line-height: 1.1;
+}
+
+/* ----------------------------------------------------------
+   ADMIN TABLE & DIRECTORY (Light Clean Styling)
+   ---------------------------------------------------------- */
+.table-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1.5px solid #d8caee;
+    padding: 9px 16px;
+    border-radius: 24px;
+    flex: 1;
+    max-width: 420px;
+    transition: all 0.2s ease;
+}
+
+.search-input-group:focus-within {
+    border-color: #7c52b8;
+    box-shadow: 0 0 0 3px rgba(124, 82, 184, 0.15);
+}
+
+.search-input-group input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    color: #1f2937;
+}
+
+.search-input-group input::placeholder {
+    color: #9ca3af;
+}
+
+.filter-selects {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-selects select {
+    padding: 9px 14px;
+    border-radius: 20px;
+    border: 1.5px solid #d8caee;
+    background: #ffffff;
+    color: #2e1065;
+    font-size: 13.5px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-selects select:focus {
+    border-color: #7c52b8;
+    box-shadow: 0 0 0 3px rgba(124, 82, 184, 0.15);
+}
+
+.filter-selects select option {
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.data-table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid #e6daf5;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(124, 82, 184, 0.05);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+    color: #374151;
+}
+
+.data-table th {
+    background: #f6f0fc;
+    padding: 13px 18px;
+    font-weight: 700;
+    color: #431f79;
+    border-bottom: 1px solid #e6daf5;
+    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: 0.6px;
+}
+
+.data-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0e6fa;
+    vertical-align: middle;
+    color: #374151;
+}
+
+.data-table tr:hover {
+    background: #faf7fd;
+}
+
+.table-student-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.table-avatar {
+    width: 40px;
+    height: 46px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1.5px solid #d8caee;
+    background: #f6f0fc;
+}
+
+.table-student-name {
+    font-weight: 700;
+    color: #2e1065;
+    font-size: 14px;
+}
+
+.table-student-id {
+    font-size: 12px;
+    color: #7c52b8;
+    font-family: monospace;
+    font-weight: 700;
+}
+
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+.status-active {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.status-inactive {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.status-toggleable {
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-width: 1px;
+    border-style: solid;
+    font-family: inherit;
+    line-height: 1.2;
+}
+
+.status-toggleable:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.status-active.status-toggleable:hover {
+    background: #d1fae5;
+    border-color: #6ee7b7;
+    color: #047857;
+}
+
+.status-inactive.status-toggleable:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn-icon {
+    padding: 7px 12px;
+    font-size: 12.5px;
+    border-radius: 18px;
+}
+
+/* ----------------------------------------------------------
+   FORM CONTROLS & INPUTS
+   ---------------------------------------------------------- */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #2e1065;
+}
+
+.form-control {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d8caee;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    background: #ffffff;
+    color: #1f2937;
+    transition: all 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #9ca3af;
+}
+
+.form-control:focus {
+    background: #ffffff;
+    border-color: #7c52b8;
+    box-shadow: 0 0 0 3px rgba(124, 82, 184, 0.15);
+}
+
+.form-control option {
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.alert-message {
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    margin-bottom: 14px;
+    display: none;
+}
+
+.alert-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* ----------------------------------------------------------
+   MODALS (Clean White with Soft Lavender Glow)
+   ---------------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(46, 16, 101, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 16px;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 560px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 60px rgba(124, 82, 184, 0.2);
+    border: 1px solid #e6daf5;
+    overflow: hidden;
+    animation: modalSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #1f2937;
+}
+
+@keyframes modalSlide {
+    from { transform: translateY(20px) scale(0.96); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #7c52b8 0%, #8e65c9 100%);
+    color: #ffffff;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #ffffff;
+}
+
+.modal-body {
+    padding: 22px 24px;
+    max-height: 75vh;
+    overflow-y: auto;
+    background: #ffffff;
+}
+
+.modal-footer {
+    padding: 16px 24px;
+    background: #fbf9fd;
+    border-top: 1px solid #e6daf5;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* ----------------------------------------------------------
+   PRINT OPTIMIZATION (CR80 Standard PVC Card Size)
+   Ensure student ID cards print clearly on a pure white background
+   ---------------------------------------------------------- */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .bg-decorations,
+    header.app-header,
+    .app-sidebar,
+    .banner-panel,
+    .controls-bar,
+    .card-side-label,
+    .upload-section,
+    .flip-hint-badge,
+    .actions,
+    .btn,
+    .modal-overlay,
+    .admin-tab-nav,
+    .table-filter-bar,
+    .stats-grid {
+        display: none !important;
+    }
+
+    .main-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 6mm !important;
+        background: #ffffff !important;
+    }
+
+    .card-panel {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .card-viewer-container {
+        display: block !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+    }
+
+    .card-display-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 10mm !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+    }
+
+    .card-perspective-box {
+        width: 85.6mm !important;
+        height: 53.98mm !important;
+        perspective: none !important;
+        page-break-inside: avoid !important;
+        margin: 0 !important;
+        background: #ffffff !important;
+    }
+
+    .card-flipper {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10mm !important;
+        transform: none !important;
+        background: #ffffff !important;
+    }
+
+    .card-flip-face {
+        position: relative !important;
+        width: 85.6mm !important;
+        height: 53.98mm !important;
+        transform: none !important;
+        backface-visibility: visible !important;
+        -webkit-backface-visibility: visible !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        background: #ffffff !important;
+    }
+
+    .card-holder-frame {
+        box-shadow: none !important;
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .holder-lanyard-slot {
+        display: none !important;
+    }
+
+    .card-badge {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        background: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVE DESIGN
+   ---------------------------------------------------------- */
+@media (max-width: 820px) {
+    .app-layout-wrapper {
+        flex-direction: column;
+    }
+
+    .app-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5daf5;
+        padding: 12px 16px;
+    }
+
+    .sidebar-nav-list {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+    }
+
+    .sidebar-footer-brand {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    header.app-header {
+        padding: 10px 14px;
+    }
+
+    .brand-text h1 {
+        font-size: 16px;
+    }
+
+    .card-perspective-box {
+        width: 100%;
+        max-width: 485px;
+        height: 310px;
+    }
+
+    .table-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input-group {
+        max-width: 100%;
+    }
+}
+
+/* ----------------------------------------------------------
+   STUDENT QUERIES & HELPDESK MODULE STYLES (Light Theme)
+   ---------------------------------------------------------- */
+.admin-tab-nav {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #e6daf5;
+    padding-bottom: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.admin-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 22px;
+    border-radius: 24px;
+    background: #ffffff;
+    border: 1.5px solid #d8caee;
+    font-size: 14px;
+    font-weight: 700;
+    color: #553488;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+
+.admin-tab-btn:hover {
+    border-color: #7c52b8;
+    color: #2e1065;
+    background: #fbf9fd;
+}
+
+.admin-tab-btn.active {
+    background: linear-gradient(135deg, #7c52b8 0%, #693ca4 100%);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(124, 82, 184, 0.25);
+}
+
+.badge-pending-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 7px;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 12px;
+    background: #ef4444;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.admin-tab-btn.active .badge-pending-count {
+    background: #ffffff;
+    color: #dc2626;
+}
+
+/* Query Cards & History items */
+.queries-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.query-card {
+    background: #ffffff;
+    border: 1px solid #e6daf5;
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    box-shadow: 0 4px 16px rgba(124, 82, 184, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.query-card:hover {
+    box-shadow: 0 8px 24px rgba(124, 82, 184, 0.12);
+    border-color: #d8caee;
+}
+
+.query-card.pending {
+    border-left: 4px solid var(--accent-gold);
+}
+
+.query-card.resolved {
+    border-left: 4px solid #10b981;
+}
+
+.query-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #f0e6fa;
+    padding-bottom: 10px;
+}
+
+.query-id-tag {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    background: #f4ecfb;
+    color: #7c52b8;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid #d8caee;
+}
+
+.query-category-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: #f3e8ff;
+    color: #6b21a8;
+    border: 1px solid #e9d5ff;
+}
+
+.query-student-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.query-student-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1.5px solid #d8caee;
+}
+
+.query-subject {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2e1065;
+    margin-bottom: 6px;
+}
+
+.query-message-text {
+    font-size: 13.5px;
+    color: #4b5563;
+    line-height: 1.5;
+    background: #fbf9fd;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-left: 3px solid #7c52b8;
+    margin-bottom: 12px;
+}
+
+.proposed-change-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #92400e;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-solution-display {
+    background: #ecfdf5;
+    border: 1.5px solid #a7f3d0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 13.5px;
+    color: #065f46;
+    line-height: 1.5;
+}
+
+.query-actions-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 12.5px;
+    border-radius: 18px;
+}
+
+/* ----------------------------------------------------------
+   STUDENT ACTION DROPDOWN MENU (Light Purple/Lavender Theme)
+   ---------------------------------------------------------- */
+.student-action-trigger {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-plum);
+    transition: all 0.2s ease;
+    user-select: none;
+    padding: 3px 6px;
+    border-radius: 8px;
+}
+
+.student-action-trigger:hover {
+    color: var(--primary);
+    background: #f4ecfb;
+}
+
+.name-action-indicator {
+    font-size: 11px;
+    background: #f4ecfb;
+    color: #7c52b8;
+    border: 1px solid #d8caee;
+    border-radius: 10px;
+    padding: 1px 6px;
+    transition: transform 0.2s ease, background 0.2s ease;
+    display: inline-block;
+}
+
+.student-action-trigger:hover .name-action-indicator {
+    background: #7c52b8;
+    color: #ffffff;
+    border-color: #7c52b8;
+}
+
+.student-action-menu {
+    position: fixed;
+    z-index: 10000;
+    width: 290px;
+    background: #ffffff !important;
+    border: 1.5px solid #d8caee;
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(124, 82, 184, 0.2), 0 2px 8px rgba(124, 82, 184, 0.08);
+    padding: 12px;
+    animation: menuDropdownFadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-sizing: border-box;
+}
+
+@keyframes menuDropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    background: #fbf9fd;
+    border-radius: 10px;
+    border: 1px solid #f0e6fa;
+}
+
+.menu-header-avatar {
+    width: 38px;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1.5px solid #d8caee;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.menu-header-info {
+    overflow: hidden;
+    line-height: 1.25;
+}
+
+.menu-header-name {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #2e1065;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu-header-id {
+    font-size: 11.5px;
+    font-family: monospace;
+    color: #7c52b8;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.menu-divider {
+    height: 1px;
+    background: #f0e6fa;
+    margin: 4px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.18s ease;
+    width: 100%;
+}
+
+.menu-item-icon {
+    font-size: 18px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.menu-item-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.menu-item-desc {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 1px;
+}
+
+.menu-item-arrow {
+    font-size: 13px;
+    color: #9ca3af;
+    transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.menu-item:hover .menu-item-arrow {
+    transform: translateX(3px);
+}
+
+.menu-item-view:hover {
+    background: #f4ecfb;
+    border-color: #d8caee;
+}
+.menu-item-view:hover .menu-item-title {
+    color: #5b3496;
+}
+.menu-item-view:hover .menu-item-arrow {
+    color: #7c52b8;
+}
+
+.menu-item-edit:hover {
+    background: #fefce8;
+    border-color: #fde68a;
+}
+.menu-item-edit:hover .menu-item-title {
+    color: #854d0e;
+}
+.menu-item-edit:hover .menu-item-arrow {
+    color: #ca8a04;
+}
+
+.menu-item-delete:hover {
+    background: #fef2f2;
+    border-color: #fca5a5;
+}
+.menu-item-delete:hover .menu-item-title {
+    color: #dc2626;
+}
+.menu-item-delete:hover .menu-item-desc {
+    color: #ef4444;
+}
+.menu-item-delete:hover .menu-item-arrow {
+    color: #dc2626;
+    transform: none;
+}
